@@ -1,6 +1,13 @@
 import pygetwindow
 import pyautogui
 import PySimpleGUIQt as sg
+import smtplib
+
+usuario = 'pythonautoriza@gmail.com'
+senha = 'zupobloxnswadzio'
+s = smtplib.SMTP('smtp.gmail.com: 587')
+s.starttls()
+s.login(usuario, senha)
 
 janelaSAP = 'SAP Business One 9.3 (g2srv11.G2TECNOLOGIA.COM.BR)'
 
