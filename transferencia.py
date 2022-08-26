@@ -3,7 +3,7 @@ import pyautogui
 import PySimpleGUIQt as sg
 import smtplib
 
-credencialEmail = open('credencialEmail.txt', 'r')
+credencialEmail = open('credencialEmail_TRANS.txt', 'r')
 loginEmail = []
 
 for linhas in credencialEmail:
