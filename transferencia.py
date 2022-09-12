@@ -4,19 +4,19 @@ import PySimpleGUIQt as sg
 import smtplib
 from time import sleep
 
-# credencialEmail = open('credencialEmail_TRANS.txt', 'r')
-# loginEmail = []
+credencialEmail = open('credencialEmail.txt', 'r')
+loginEmail = []
 
-# for linhas in credencialEmail:
-#     linhas = linhas.strip()
-#     loginEmail.append(linhas)
-# usuario_email = loginEmail[0][17:-1]
-# senha_email = loginEmail[1][15:-1]
-# s = smtplib.SMTP('smtp.gmail.com: 587')
-# s.starttls()
-# s.login(usuario_email, senha_email)
+for linhas in credencialEmail:
+    linhas = linhas.strip()
+    loginEmail.append(linhas)
+usuario_email = loginEmail[0][17:-1]
+senha_email = loginEmail[1][15:-1]
+s = smtplib.SMTP('smtp.gmail.com: 587')
+s.starttls()
+s.login(usuario_email, senha_email)
 
-janelaSAP = 'SAP Business One 9.3 - VERO S.A (g2srv11.G2TECNOLOGIA.COM.BR)'
+janelaSAP = 'SAP Business One 9.3 (g2srv11.G2TECNOLOGIA.COM.BR)'
 
 SAP = pygetwindow.getWindowsWithTitle(janelaSAP)[0]
 
