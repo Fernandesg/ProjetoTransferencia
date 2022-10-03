@@ -16,10 +16,10 @@ s = smtplib.SMTP('smtp.gmail.com: 587')
 s.starttls()
 s.login(usuario_email, senha_email)
 
-with open('titlosap.txt') as titulosap:
+with open('titulosap.txt') as titulosap:
     janelaSAP = titulosap.read()
 
-SAP = pygetwindow.getWindowsWithTitle(janelaSAP)
+SAP = pygetwindow.getWindowsWithTitle(janelaSAP)[0]
 
 
 layout = [
@@ -44,10 +44,6 @@ while True:
             for serial in listaSeriais:
                 pyautogui.write(serial)
                 pyautogui.press('tab')
-                sleep(0.1)
-                if pyautogui.locateOnScreen('impossivelLocalizar.png',confidence=0.9) != None:
-                    sg.popup(f'Erro! {serial} não encontrado!\nLinha: {listaSeriais.index(serial)}')
-                    break
                     
             sg.popup('Transferencia finalizada')
         case sg.WIN_CLOSED:
