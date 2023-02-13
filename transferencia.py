@@ -16,10 +16,15 @@ s = smtplib.SMTP('smtp.gmail.com: 587')
 s.starttls()
 s.login(usuario_email, senha_email)
 
-with open('titulosap.txt') as titulosap:
-    janelaSAP = titulosap.read()
+# with open('titulosap.txt') as titulosap:
+#     janelaSAP = titulosap.read()
 
-SAP = pygetwindow.getWindowsWithTitle(janelaSAP)[0]
+# SAP = pygetwindow.getWindowsWithTitle(janelaSAP)[0]
+janelas = pygetwindow.getAllTitles()
+
+for janela in janelas:
+    if janela.startswith('SAP Business One'):
+        SAP = pygetwindow.getWindowsWithTitle(janela)[0]
 
 
 layout = [
